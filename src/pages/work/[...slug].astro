@@ -46,13 +46,13 @@ const { Content } = await entry.render();
         </div>
       </header>
       <main class="wrapper">
-        <div class="stack gap-10 content">
+        <div class="stack gap-10 content max-w-screen-sm m-auto">
           {
             entry.data.img && (
               <img src={entry.data.img} alt={entry.data.img_alt || ""} />
             )
           }
-          <div class="content">
+          <div class="content sm:max-w-screen-sm w-full text-balance m-auto">
             <Content />
           </div>
         </div>
@@ -85,11 +85,6 @@ const { Content } = await entry.render();
   .description {
     font-size: var(--text-lg);
     max-width: 54ch;
-  }
-
-  .content {
-    max-width: 65ch;
-    margin-inline: auto;
   }
 
   .content > :global(* + *) {
