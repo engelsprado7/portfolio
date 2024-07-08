@@ -70,11 +70,22 @@ const listPost = (await getCollection("newsletter"))
     </div>
 
     <main class="wrapper stack gap-20 lg:gap-48">
-      <section>
-        <header>
+      <section class="section with-background with-cta">
+        <header class="section-header">
           <h2>Experience</h2>
         </header>
-        <Experience />
+        <div class="gallery">
+          <Experience />
+        </div>
+        <div class="cta">
+          <CallToAction
+            href="/assets/EngelsPradoCV.pdf"
+            download="EngelsPradoCV"
+          >
+            Download CV
+            <Icon icon="arrow-right" size="1.2em" />
+          </CallToAction>
+        </div>
       </section>
       <section class="section with-background with-cta">
         <header class="section-header stack gap-2 lg:gap-4">
