@@ -27,6 +27,7 @@ export default ({ config: _themeConfig = "src/config.yaml" } = {}) => {
         const rawJsonConfig = await loadConfig(_themeConfig);
         const { SITE, I18N, METADATA, APP_BLOG, UI, ANALYTICS } =
           configBuilder(rawJsonConfig);
+        console.log("TEST", { SITE, I18N, METADATA, APP_BLOG, UI, ANALYTICS })
 
         updateConfig({
           site: SITE.site,
@@ -87,7 +88,7 @@ export default ({ config: _themeConfig = "src/config.yaml" } = {}) => {
           const hasIntegration =
             Array.isArray(cfg?.integrations) &&
             cfg.integrations?.find((e) => e?.name === "@astrojs/sitemap") !==
-              undefined;
+            undefined;
           const sitemapExists = fs.existsSync(sitemapFile);
 
           if (hasIntegration && sitemapExists) {

@@ -9,6 +9,7 @@ import sitemap from "@astrojs/sitemap";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   integrations: [tailwind(), mdx(), sitemap(),
   astrowind({
     config: './src/config.yaml',
