@@ -2,7 +2,7 @@ site:
   name: Engels Prado Dev
   site: 'https://master--engelsdev.netlify.app/'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
 
   googleSiteVerificationId: l7AWHRDHisW9B3Q1MUODWFBmdAB5OI7KNIySKehRUXI
 

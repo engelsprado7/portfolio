@@ -7,10 +7,9 @@ interface Props {
 
 const { data, slug } = Astro.props.project;
 const path = Astro.url.pathname;
-console.log(path); // This will log the path portion of the URL to the console
 ---
 
-<a class="card" href={`${path}${slug}`}>
+<a class="card" href={`${path}${slug}/`}>
   <span class="title">{data.title}</span>
   <img
     src={data.img}
