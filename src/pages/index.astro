@@ -19,12 +19,11 @@ import Experience from "../components/Experience.astro";
 import CardPost from "../components/CardPost.astro";
 
 // Content Fetching: List four most recent work projects
+
 const projects = (await getCollection("work"))
   .sort(
-    (
-      a: { data: { publishDate: number } },
-      b: { data: { publishDate: number } }
-    ) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+    (a: { data: { publishDate: Date } }, b: { data: { publishDate: Date } }) =>
+      b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
   )
   .slice(0, 4);
 
