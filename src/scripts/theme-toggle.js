@@ -13,7 +13,6 @@ class ThemeToggle extends HTMLElement {
                 button.setAttribute("aria-pressed", String(dark));
 
             })
-
         };
 
         // Toggle the theme when a user clicks the button.
@@ -23,7 +22,7 @@ class ThemeToggle extends HTMLElement {
             setTheme(!this.isDark())
 
         // Initialize button state to reflect current theme.
-        document.startViewTransition(setTheme);
+        setTheme(this.isDark());
     }
 
     isDark() {
@@ -31,4 +30,3 @@ class ThemeToggle extends HTMLElement {
     }
 }
 customElements.define("theme-toggle", ThemeToggle);
-console.log("ThemeToggle loaded");
