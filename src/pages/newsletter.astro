@@ -11,12 +11,14 @@ import Grid from "../components/Grid.astro";
 const projects = (await getCollection("newsletter")).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
+
+const metadata = {
+  title: "Blog",
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="My Blog | Engels Prado"
-  description="Learn about Engels Prado's most recent projects"
->
+<BaseLayout metadata={metadata}>
   <div class="stack gap-20">
     <main class="wrapper stack gap-8">
       <Hero

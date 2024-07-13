@@ -5,15 +5,9 @@ interface Props {
   title?: string | undefined;
   description?: string | undefined;
 }
-
-const {
-  title = "Engels Prado: Personal Site",
-  description = "The personal site of Engels Prado",
-} = Astro.props;
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <meta
@@ -21,7 +15,6 @@ const {
   content="l7AWHRDHisW9B3Q1MUODWFBmdAB5OI7KNIySKehRUXI"
 />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<title>{title}</title>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -7,6 +7,10 @@ import ContactCTA from "../../components/ContactCTA.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 import Pill from "../../components/Pill.astro";
+import { findImage } from "~/utils/images";
+import type { MetaData } from "~/types";
+import merge from "lodash.merge";
+import { getCanonical, getPermalink } from "~/utils/permalinks";
 
 interface Props {
   entry: CollectionEntry<"newsletter">;
@@ -23,11 +27,46 @@ export async function getStaticPaths() {
   }));
 }
 
+const url = "";
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const image = (await findImage(entry.data.image)) as
+  | ImageMetadata
+  | string
+  | undefined;
+
+const metadata = merge(
+  {
+    title: entry.data.title,
+    description: entry.data.excerpt,
+    openGraph: {
+      type: "article",
+      ...(image
+        ? {
+            images: [
+              {
+                url: image,
+                width: (image as ImageMetadata)?.width,
+                height: (image as ImageMetadata)?.height,
+              },
+            ],
+          }
+        : {}),
+    },
+  },
+  {
+    ...(entry.data?.metadata
+      ? {
+          ...entry.data.metadata,
+          canonical: entry.data.metadata?.canonical || url,
+        }
+      : {}),
+  }
+) as MetaData;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout metadata={metadata}>
   <div class="stack gap-20">
     <div class="stack gap-15">
       <header>

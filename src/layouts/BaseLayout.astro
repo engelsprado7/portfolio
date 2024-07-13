@@ -6,18 +6,27 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Metadata from "~/common/Metadata.astro";
+import type { MetaData as MetaDataType } from "~/types";
 
-interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
+// interface Props {
+//   title?: string | undefined;
+//   description?: string | undefined;
+// }
+
+export interface Props {
+  metadata?: MetaDataType;
 }
 
-const { title, description } = Astro.props;
+const { metadata = {} } = Astro.props;
+
+// const { title, description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <MainHead title={title} description={description} />
+    <MainHead />
+    <Metadata {...metadata} />
   </head>
   <body>
     <div class="stack backgrounds">
