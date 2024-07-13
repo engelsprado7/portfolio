@@ -30,11 +30,11 @@ const url = "";
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const image = (await findImage(entry.data.image)) as
+const image = (await findImage(entry.data.img)) as
   | ImageMetadata
   | string
   | undefined;
-
+console.log("IMAGE", image);
 const metadata = merge(
   {
     title: entry.data.title,
