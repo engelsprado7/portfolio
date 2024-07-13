@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Engels Prado Dev
     images:
-      - url: '~/assets/image.png'
+      - url: '/assets/image.png'
         width: 1200
         height: 628
     type: website
