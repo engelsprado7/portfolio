@@ -11,7 +11,7 @@ metadata:
   title:
     default: Engels Prado Dev
     template: '%s — Engels Prado Dev'
-  description: "\U0001F680 Welcome to my portfolio."
+  description: "\U0001F680 I am a Frontend Developer with 4 years of experience."
   robots:
     index: true
     follow: true
