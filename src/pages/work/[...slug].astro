@@ -25,9 +25,15 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const metadata = {
+  title: "Engels Prado Dev",
+  description: entry.data.description,
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout metadata={metadata}>
   <div class="stack gap-20">
     <div class="stack gap-15">
       <header>

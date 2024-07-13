@@ -3,12 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
+
+const metadata = {
+  title: "About | Engels Prado",
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="About | Engels Prado"
-  description="About Engels Prado Lorem Ipsum"
->
+<BaseLayout metadata={metadata}>
   <div class="stack gap-20">
     <main class="wrapper about">
       <Hero
