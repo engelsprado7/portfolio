@@ -11,14 +11,14 @@ metadata:
   title:
     default: Engels Prado Dev
     template: '%s — Engels Prado Dev'
-  description: "\U0001F680 Genera riqueza de forma automatizada sin ser experto. Vive de tus inversiones."
+  description: "\U0001F680 Welcome to my portfolio."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Engels Prado Dev
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/image.png'
         width: 1200
         height: 628
     type: website
